@@ -1,0 +1,75 @@
+{
+    "name": "local-web-opener",
+    "displayName": "Local Web Opener",
+    "description": "Open html file in default browser with existing local web server.",
+    "version": "1.0.1",
+    "publisher": "xiaoletao",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Tairraos/vscode-local-web-opener.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Tairraos/vscode-local-web-opener/issues"
+    },
+    "engines": {
+        "vscode": "^1.27.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:xiaoletao.openInLocalWeb"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "configuration": [
+            {
+                "title": "Local Web Opener",
+                "properties": {
+                    "local-web-opener.pathPatten": {
+                        "type": "string",
+                        "default": "",
+                        "description": "Provide a part of path, it will be replace with URLPatten."
+                    },
+                    "local-web-opener.URLPatten": {
+                        "type": "string",
+                        "default": "",
+                        "description": "Provide a URLPatten it will replace pathPatten."
+                    }
+                }
+            }
+        ],
+        "commands": [
+            {
+                "command": "xiaoletao.openInLocalWeb",
+                "title": "Open in local web"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "editorLangId == html",
+                    "command": "xiaoletao.openInLocalWeb",
+                    "group": "1_modification"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "when": "resourceLangId == html",
+                    "command": "xiaoletao.openInLocalWeb",
+                    "group": "1_modification"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "vscode": "^1.1.21",
+        "eslint": "^4.11.0"
+    },
+    "dependencies": {
+        "opn": "^4.0.2"
+    }
+}
