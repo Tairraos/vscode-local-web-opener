@@ -71,5 +71,7 @@
     },
     "dependencies": {
         "opn": "^4.0.2"
-    }
+    },
+    "icon": "icon.png",
+    "license": "MIT"
 }
