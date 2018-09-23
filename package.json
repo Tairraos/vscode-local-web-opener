@@ -2,7 +2,7 @@
     "name": "local-web-opener",
     "displayName": "Local Web Opener",
     "description": "Open html file in default browser with existing local web server.",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "publisher": "xiaoletao",
     "repository": {
         "type": "git",
